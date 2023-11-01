@@ -1,0 +1,13 @@
+
+
+<div class="card flex justify-content-center mt-4">
+  <span class="p-float-label">
+    <p-autoComplete [(ngModel)]="searchText" [suggestions]="paisesAutocomplete"  field="pais" (completeMethod)="filterCountries($event)" (onSelect)="onSelectItem($event)"></p-autoComplete>
+    <label>Buscar por pais</label>
+  </span>
+</div>
+
+  <p-toast></p-toast>
+
+
+
