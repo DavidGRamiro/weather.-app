@@ -4,6 +4,7 @@ import { WeatherComponent } from './components/weather/weather.component';
 import { WeatherCardsComponent } from './components/weather-cards/weather-cards.component';
 import { PrimeNGModule } from 'src/app/Library/primeng.module';
 import { FormsModule } from '@angular/forms';
+import { WeatherMainComponent } from './components/weather-main/weather-main.component';
 
 
 
@@ -11,7 +12,8 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     WeatherComponent,
-    WeatherCardsComponent
+    WeatherCardsComponent,
+    WeatherMainComponent
   ],
   imports: [
     CommonModule,

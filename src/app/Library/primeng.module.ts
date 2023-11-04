@@ -5,24 +5,19 @@ import { InputTextModule } from 'primeng/inputtext';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ToastModule } from 'primeng/toast';
 import { MessagesModule } from 'primeng/messages';
+import { CardModule } from 'primeng/card';
 
 
 
 
 @NgModule({
-  imports: [
-    ButtonModule,
-    InputTextModule,
-    AutoCompleteModule,
-    ToastModule,
-    MessagesModule
-  ],
   exports:[
     ButtonModule,
     InputTextModule,
     AutoCompleteModule,
     MessagesModule,
-    ToastModule
+    ToastModule,
+    CardModule
   ]
 })
 
