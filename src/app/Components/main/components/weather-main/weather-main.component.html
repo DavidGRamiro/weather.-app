@@ -4,13 +4,13 @@
 </div>
 
 
-<div >
+<div *ngIf="bLluvia">
   <!-- Animaciones de si hay lluvia -->
   <app-particles-rain></app-particles-rain>
 
   <!-- Información detallada -->
   <div>
-    <app-card-weather></app-card-weather>
+    <app-card-weather [weather]="tiempoActual"></app-card-weather>
   </div>
 
 </div>

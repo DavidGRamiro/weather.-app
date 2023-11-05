@@ -52,6 +52,10 @@ export class WeatherMainComponent implements OnInit{
       case 'Snow':
         console.log("Nieve")
         break;
+      case 'Drizzle':
+        console.log("lluvia ligera")
+        this.bLluvia = true
+        break;
       default:
       console.log("Default")
     }
