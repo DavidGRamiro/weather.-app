@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Message, MessageService } from 'primeng/api';
+import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
 import { startWith } from 'rxjs';
 import { CountryService } from 'src/app/Components/API/country.service';
 import { CityData } from 'src/app/Components/API/models/modelo-city';
@@ -15,6 +16,8 @@ import { OpenWeatherService } from 'src/app/Components/API/open-weather.service'
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent implements OnInit {
+
+  @ViewChild('autocomplete', { static: false}) autoComplete: any;
 
   // Objetos y clases
   public weather_data? : WeatherResult;
@@ -78,9 +81,9 @@ export class WeatherComponent implements OnInit {
   // Recibimos un objeto con el pais y el código, para poder acceder a los paises posteriormente
   onSelectItem(event : any){
     let selectPais = event.alphaCode
-
     this._countryService.getCities(selectPais).subscribe({
       next : (data:CityData) => {
+
         this.bHayDatos = true;
         this.totalCities = data.geonames
         this.totalCities.forEach( ciudad => this.filteredCities.push(ciudad.name))
@@ -92,6 +95,7 @@ export class WeatherComponent implements OnInit {
     )
   }
 
+
   // Filtro para el autocomplete de provincias y ciudades
   filterCities(event : any){
     this.cityAutocomplete = this.filteredCities.filter( city =>
@@ -99,9 +103,12 @@ export class WeatherComponent implements OnInit {
     );
   }
 
+  // Evento cuando se selecciona una ciudad y llamada al servicio de búsqueda de tiempo
   onSelectCity( event : any){
     this.getActualWeather(event);
+    this.cityAutocomplete = new Array()
   }
+
 
 
 

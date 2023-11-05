@@ -1,0 +1,15 @@
+ng-particles {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  z-index: -1;
+}
+
+
+#cloud{
+  width: 130%;
+  margin-top: -60%;
+  margin-left: -20%;
+  position:fixed
+}
+

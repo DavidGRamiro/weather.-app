@@ -12,6 +12,9 @@ import { ButtonModule } from 'primeng/button';
 import { PrimeNGModule } from './Library/primeng.module';
 import { ComponentsModule } from './Components/components.module';
 import { MessageService } from 'primeng/api';
+import { AnimationsModule } from './Components/Animations/animations.module';
+import { MainModule } from './Components/main/main.module';
+
 
 @NgModule({
   declarations: [
@@ -22,9 +25,8 @@ import { MessageService } from 'primeng/api';
     AppRoutingModule,
     BrowserAnimationsModule,
     PrimeNGModule,
-    ComponentsModule,
-    FormsModule
-
+    FormsModule,
+    ComponentsModule
   ],
   providers: [ MessageService],
   bootstrap: [AppComponent]
